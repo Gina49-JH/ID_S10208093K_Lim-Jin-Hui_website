@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tracking Expenses</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+      .form-group {
+        margin-top:30px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      #btn-submit,#piechart,#barchart{
+        margin-top:20px;
+      }
+      #update,#toggle,#delete{
+        margin-top:20px;
+      }
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+      .container-fluid{
+        background-color:blue;
+      }
+      .nav navbar-nav{
+        color: white;
+      }
+    </style>
+  </head>
+<body>
+<!-- NavBar is under external code the reference is from https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_navbar_collapse -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">FastTrack</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Expenses.html">Expenses</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--chart-container is for user to input the expenses, display the charts and store into localstorage -->  
+<div class="chart-container">
+    <canvas id="chart"></canvas>
+    <div class="form-group" id ="fm">
+        <h3>Form</h3>
+        <label for="D1" id ='D1'>Date:</label>
+        <input type="text" class="form-control" name = "dat" id="dat" placeholder="Date">
+        <label for="EFCI1" id ='EFCI1'>Daily Amount Spent:</label>
+        <input type="text" class="form-control" name = "exp" id="exp" placeholder="Total amount spent each day">
+        <label for="EFCI2" id = 'EFCI2'>Given Amount:</label>
+        <input type="text" class="form-control" name = "tot" id="tot" placeholder="Total money given by person">
+        <button id ="btn-submit" class="btn btn-success"onclick ="addData(chart)">Add</button>
+        <button id ="piechart" class="btn btn-info">Pie Chart</button>
+        <button id ="barchart" class="btn btn-info">Bar Chart</button>
+        <button id ="update" class="btn btn-warning" onclick="updateData(chart)">Update</button>
+        <button id ="delete" class="btn btn-warning" onclick="removeData(chart)">Delete</button>
+        <button id ="toggle" class="btn btn-warning">toggle</button>
+    </div>
+    <div class="container">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Expenses</th>
+            <th scope="col">Given Allowence</th>
+          </tr>
+        </thead>
+        <tbody id="localstorage-info">
+        </tbody>
+      </table>
+      </div>
+</div>
+<!--using Jquery and Bootstrap for the website -->  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--using ChartJs API for the website -->  
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0"></script>
+<!--Using ChartJs API to create and display charts external scripts
+    Localstorage and chartjs code is combined to one file.-->  
+<script src="chart.js"></script>
+
+
+</body>
+</html>
