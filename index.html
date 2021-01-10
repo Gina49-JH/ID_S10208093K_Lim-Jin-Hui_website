@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- using stylesheet and bootstrap for the fonts from external website-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Inline CSS for homepage-->
+  <style>
+      .content{
+        text-align: center;
+        margin-top: 230px;
+        font-family: 'Roboto Condensed', 'sans-serif';
+        font-size:20px;
+      }
+      .container-fluid{
+        background-color:blue;
+      }
+      .nav navbar-nav{
+        color: white;
+      }
+  </style>
+</head>
+<body>
+<!-- NavBar is under external code the reference is from https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_navbar_collapse -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">FastTrack</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Expenses.html">Expenses</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class = "content">
+    <h2>Welcome to FastTracking</h2>
+    <h3>where you can track expenses here</h3>
+</div>
+<!--using Jquery and Bootstrap for the website -->  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
